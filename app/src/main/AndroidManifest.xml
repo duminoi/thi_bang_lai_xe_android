@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.myapplication">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <activity android:name="ui.MainActivity"
+            android:exported="true"> <!-- Đặt android:exported = true cho MainActivity -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Đặt android:exported = false cho các Activity khác nếu không muốn chúng có thể được gọi từ ứng dụng khác -->
+        <activity
+            android:name="ui.activityImpl.FinesActivityImpl"
+            android:parentActivityName="ui.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activityImpl.ExamPrincipleActivityImpl"
+            android:parentActivityName="ui.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activityImpl.TrafficSignsActivityImpl"
+            android:parentActivityName="ui.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activityImpl.ThucHanhActivityImpl"
+            android:parentActivityName="ui.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activityImpl.SaHinhActivityImpl"
+            android:parentActivityName="ui.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activityImpl.LyThuyetActivityImpl"
+            android:parentActivityName="ui.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activityImpl.TopicActivityImpl"
+            android:parentActivityName="ui.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activityImpl.TestExamActivityImpl"
+            android:parentActivityName="ui.activityImpl.TopicActivityImpl"
+            android:exported="false" />
+        <activity android:name="ui.activityImpl.ResultTestExamActivityImpl"
+            android:exported="false" />
+    </application>
+
+</manifest>
